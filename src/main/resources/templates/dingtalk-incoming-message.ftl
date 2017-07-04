@@ -11,11 +11,15 @@
 <#else>
     <#assign state="成功">
 </#if>
+<#assign optionStr = "">
+<#list executionData.context.option?keys as key>
+    <#assign optionStr = optionStr + "\\n* " + key + " = " + executionData.context.option[key]>
+</#list>
 {
     "msgtype": "markdown",
     "markdown": {
-        "title":"升级报告",
-        "text": "# ${jobName}升级${state}报告 \n ## 操作人:\n\n ${executionData.user} \n ## 项目: \n\n ${executionData.project} \n ## 任务:\n\n [${jobName}](${executionData.job.href}) \n ## 任务编号:\n\n [${executionData.id}](${executionData.href}) \n ## 执行参数:\n\n ${executionData.argstring} "
+        "title":"${jobName}升级${state}报告",
+        "text": "# ${jobName}升级${state}报告 \n ## 操&nbsp;&nbsp;作&nbsp;人: ${executionData.user} \n ## 项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目:  ${executionData.project} \n ## 任&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务: [${jobName}](${executionData.job.href}) \n ## 任务编号: [${executionData.id}](${executionData.href}) \n ## 执行参数: ${optionStr} "
      }
 }
 

@@ -77,7 +77,6 @@ public class DingtalkNotificationPlugin implements NotificationPlugin {
 
         HttpURLConnection connection = null;
         InputStream responseStream = null;
-//        String body = "payload=" + URLEncoder.encode(message);
         try {
             connection = openConnection(requestUrl);
             putRequestStream(connection, message);
