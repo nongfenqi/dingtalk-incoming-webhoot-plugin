@@ -14,4 +14,4 @@
 ![](./doc/img/rundeck-dingtalk.png)
 
 效果
-![](./doc/img/dingtalk.png)
+![](./doc/img/dingtalk.jpeg)
